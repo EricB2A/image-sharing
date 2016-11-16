@@ -1,9 +1,15 @@
 sudo apt-get install build-essential tcl
-sudo apt-get install -y php5 php5-dev php5-mbstring php5-json php5-xml php5-tokenizer php5-cli
+#sudo apt-get install -y php5 php5-dev php5-mbstring php5-json php5-cli
+sudo apt-get install -y php php-dev php-mbstring php-json php-cli
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('SHA384', 'composer-setup.php') === 'aa96f26c2b67226a324c27919f1eb05f21c248b987e6195cad9690d5c1ff713d53020a02ac8c217dbf90a7eacc9d141d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 php composer-setup.php --filename=composer
 php -r "unlink('composer-setup.php');"
+@phpunit
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+sudo mv phpunit.phar /usr/local/bin/phpunit
+
 #install redis
 #https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04
 cd /tmp
