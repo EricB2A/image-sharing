@@ -15,7 +15,7 @@ sudo make install
 sudo mkdir /etc/redis
 sudo cp /tmp/redis-stable/redis.conf /etc/redis
 sudo adduser --system --group --no-create-home redis
-echo <<<EOF
+echo "
 [Unit]
 Description=Redis In-Memory Data Store
 After=network.target
@@ -27,7 +27,7 @@ ExecStop=/usr/local/bin/redis-cli shutdown
 Restart=always
 [Install]
 WantedBy=multi-user.target
-<<<EOF > /etc/systemd/system/redis.service
+" > /etc/systemd/system/redis.service
 sudo mkdir /var/lib/redis
 sudo chown redis:redis /var/lib/redis
 sudo chmod 770 /var/lib/redis
