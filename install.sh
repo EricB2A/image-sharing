@@ -41,3 +41,8 @@ sudo systemctl start redis
 sudo apt-get install -y mysql-server
 sudo mysql_secure_installation
 sudo service mysql start
+
+cp .env.example .env
+echo "DO NOT FORGET TO MODIFY YOUR .env"
+composer install
+php artisan key:generate
