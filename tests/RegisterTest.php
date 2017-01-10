@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class RegisterTest extends TestCase
 {
+    use DatabaseMigrations;
     /*
      * Goes to the registration page from the root page
      *
