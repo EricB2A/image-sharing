@@ -6,6 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class LoginTest extends TestCase
 {
+    use DatabaseMigrations;
     /*
      * Goes to the login page from the root page
      *
