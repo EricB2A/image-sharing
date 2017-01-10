@@ -7,3 +7,8 @@ before_script:
   - cp .env.travis .env
   - composer self-update
   - composer install --no-interaction
+  
+notifications:
+  slack:
+    on_success: never
+    on_error: never
